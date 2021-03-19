@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./Link/JoinStyle.css">
+    <title>회원가입</title>
+</head>
+
+<body>
+    <div id="container">
+        <header class="mov-header">
+            <div class="header" id="header-title">
+                <div class="header"></div>
+            </div>
+        </header>
+        <section>
+            <form action="" id="welcome">
+                <div class="section-body" id="section1">
+                    <p style="text-align: center;">WELCOME TO WORLD</p>
+                    <div class="join-box">
+                        <div>
+                            <label>Email</label>
+                            <input type="email" name="userEmail" id="userEmail" placeholder="이메일을 입력해주세요.">
+                            <p class="order" id="wel-email"></p>
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <div>
+                                <input type="password" id="password" class="form-input" placeholder="비밀번호를 입력해주세요.">
+                                <i class="fa fa-eye" id="eye" aria-hidden="true" onclick="OpenPwd(event);"></i>
+                                <p class="order" id="wel-pwd"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0px 20px;">
+                        <button type="submit" class="boxBtn" form="welcome">LOGIN</button>
+                        <button type="button" class="boxBtn" onclick="mov_div()">JOIN</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section>
+            <form action="" id="join">
+                <div class="section-body" id="section2" style="display: none;">
+                    <p style="text-align: center;">JOIN US!</p>
+                    <div class="join-box">
+                        <div>
+                            <label>Name</label>
+                            <input type="text" name="userName" id="userName" placeholder="이름을 입력해주세요.">
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" name="joinEmail" id="joinEmail" placeholder="이메일을 입력해주세요.">
+                            <p class="order" id="join-email"></p>
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <div>
+                                <input type="password" id="joinPassword" class="form-input" placeholder="비밀번호를 입력해주세요.">
+                                <i class="fa fa-eye" id="eye" aria-hidden="true" onclick="OpenPwd(event);"></i>
+                                <p class="order" id="join-pwd">특수문자를 포함한 8~12자리로 입력해주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0px 20px;">
+                        <button type="submit" class="boxBtn" form="join">JOIN</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script src="Link/JoinScript.js"></script>
+</body>
+
+</html>

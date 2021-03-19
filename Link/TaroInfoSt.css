@@ -1,0 +1,89 @@
+html {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+	margin: 0;
+	-ms-overflow-style: none;
+    background-size: cover;
+    background-image: url('../images/bg01.png');
+    /* background: linear-gradient( to bottom, rgb(139, 65, 146), rgb(223, 179, 231) ); */
+}
+::-webkit-scrollbar { 
+	 display: none; 
+}
+div, section, header, footer, p, h1, h2 {
+    text-align: center;
+	box-sizing: border-box;
+}
+a {
+	color: royalblue;
+}
+p {
+    white-space: normal;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.global-width{
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 30px 1rem;
+}
+.scroll-graphic {
+	position: sticky;
+	top: 10px;
+	height: 100vh;
+	overflow: hidden;
+}
+.graphic-item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.5s;
+	will-change: opacity;
+}
+.visible {
+	opacity: 1;
+}
+.screen-img {
+    background-size: cover;
+}
+.scroll-text {
+	position: relative;
+}
+.step {
+	margin-bottom: 60vh;
+	padding: 0.5rem 1rem;
+    text-align: center;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 10px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.page-title {
+    font-size: 64px; 
+    color: #fff;
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.8);
+}
+.taro {
+    position: relative;
+    width: 460px;
+    height: 680px;
+    float: left;
+    border-radius: 30px;
+	background: rgba(255, 255, 255, 0.8);
+    /* background: #fff; */
+}
+.global-footer {
+	padding: 2rem 0;
+	text-align: center;
+}
+.strikethrough {
+	text-decoration: line-through;
+}

@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../images/bg05.png');
+    height: 768px;
+    background-size: cover;
+    background-color: #6A1B9A;
+	-ms-overflow-style: none; 
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+div.header {
+    position: relative;
+    top: -630px;
+    width: 1024px;
+    height: 720px;
+    margin: 0 auto;
+}
+
+div.circle {
+    position: relative;
+    top: 40px;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.1);
+}
+
+div.innerCircle {
+    position: relative;
+    top: 190px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 100%;
+    animation: rise-card 3s forwards;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.2);
+}
+
+div.circleEnd {
+    animation: circle-end 3s forwards;
+}
+
+div.board {
+    position: relative;
+    top: 20px;
+    width: 1024px;
+    height: 640px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 60px;
+}
+
+div.board_bg {
+    animation: start-board 2s forwards;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px 7px rgba(255, 255, 255, 0.1);
+}
+
+div.card {
+    position: relative;
+    margin: 0 auto;
+    width: 140px;
+    height: 240px;
+    border-radius: 10px;
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+div.selectedTaro {
+    animation: selected-taro 2s forwards;
+}
+
+div.card p {
+    text-align: center;
+    font: 22px/215px Georgia, Times New Roman, serif;
+}
+
+div.innerCircle a {
+    position: relative;
+    top: 12%;
+    text-align: center;
+    color: rgb(255, 245, 154);
+    font: 28px/205px 'Song Myung', serif;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    animation: rise-card 3s forwards;
+}
+
+div.start {
+    top: 30%;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+}
+
+div.start:hover {
+    animation: start-card 3s;
+    animation-iteration-count: infinite;
+}
+
+div.end {
+    top: 30%;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1);
+    animation: start-card-end 3s forwards;
+}
+
+div[class*='taro']:before {
+    position: absolute;
+    font-size: 35px;
+    left: 500px;
+    top: 5px;
+}
+
+div[class*='taro']:after {
+    position: absolute;
+    font-size: 35px;
+    right: 5px;
+    bottom: 5px;
+}
+
+div.dack {
+    margin: 50px;
+}
+
+/* For modern browsers */
+div.dack:before,
+div.dack:after {
+    content: "";
+    display: table;
+}
+
+div.dack:after {
+    clear: both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+div.dack {
+    zoom: 1;
+}
+
+div.card:hover {
+    cursor: pointer;
+}
+
+div.spread {
+    top: 340px;
+    width: 1024px;
+    height: 280px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1); */
+}
+
+div.spread>.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: top 0.8s ease, left 0.8s ease;
+    -moz-transition: top 0.8s ease, left 0.8s ease;
+    -o-transition: top 0.8s ease, left 0.8s ease;
+    -ms-transition: top 0.8s ease, left 0.8s ease;
+    transition: top 0.8s ease, left 0.8s ease;
+}
+
+div.point>.card {
+    position: absolute;
+}
+
+div.down {
+    display: none;
+}
+
+div.selected1 {
+    left: 10%;
+    animation: rise-card 3s forwards;
+}
+
+div.selected2 {
+    left: 43.5%;
+    animation: rise-card 3s forwards;
+}
+
+div.selected3 {
+    left: 75%;
+    animation: rise-card 3s forwards;
+}
+
+div.spread:hover div.taro1 {
+    top: 26px;
+    left: 810px;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+div.spread:hover div.taro2 {
+    top: 7px;
+    left: 760px;
+    -webkit-transform: rotate(24deg);
+    -moz-transform: rotate(24deg);
+    -o-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+}
+
+div.spread:hover div.taro3 {
+    top: -6px;
+    left: 710px;
+    -webkit-transform: rotate(18deg);
+    -moz-transform: rotate(18deg);
+    -o-transform: rotate(18deg);
+    -ms-transform: rotate(18deg);
+    transform: rotate(18deg);
+}
+
+div.spread:hover div.taro4 {
+    top: -18px;
+    left: 665px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+div.spread:hover div.taro5 {
+    top: -26px;
+    left: 625px;
+    -webkit-transform: rotate(12deg);
+    -moz-transform: rotate(12deg);
+    -o-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    transform: rotate(12deg);
+}
+
+div.spread:hover div.taro6 {
+    top: -32px;
+    left: 585px;
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    transform: rotate(8deg);
+}
+
+div.spread:hover div.taro7 {
+    top: -38px;
+    left: 545px;
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+    -ms-transform: rotate(6deg);
+    transform: rotate(6deg);
+}
+
+div.spread:hover div.taro8 {
+    top: -40px;
+    left: 510px;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+div.spread:hover div.taro9 {
+    top: -42px;
+    left: 480px;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+div.spread:hover div.taro10 {
+    top: -42px;
+    left: 460px;
+    -webkit-transform: rotate(1deg);
+    -moz-transform: rotate(1deg);
+    -o-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+
+div.spread:hover div.taro11 {
+    top: -42px;
+    left: 433px;
+}
+
+div.spread:hover div.taro12 {
+    top: -42px;
+    left: 412px;
+}
+
+div.spread:hover div.taro13 {
+    top: -42px;
+    left: 395px;
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+}
+
+div.spread:hover div.taro14 {
+    top: -42px;
+    left: 375px;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+div.spread:hover div.taro15 {
+    top: -40px;
+    left: 345px;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+div.spread:hover div.taro16 {
+    top: -38px;
+    left: 310px;
+    -webkit-transform: rotate(-6deg);
+    -moz-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+    -ms-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+}
+
+div.spread:hover div.taro17 {
+    top: -32px;
+    left: 270px;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    -o-transform: rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    transform: rotate(-8deg);
+}
+
+div.spread:hover div.taro18 {
+    top: -26px;
+    left: 230px;
+    -webkit-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    -o-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+}
+
+div.spread:hover div.taro19 {
+    top: -18px;
+    left: 190px;
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+
+div.spread:hover div.taro20 {
+    top: -6px;
+    left: 145px;
+    -webkit-transform: rotate(-18deg);
+    -moz-transform: rotate(-18deg);
+    -o-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    transform: rotate(-18deg);
+}
+
+div.spread:hover div.taro21 {
+    top: 7px;
+    left: 100px;
+    -webkit-transform: rotate(-24deg);
+    -moz-transform: rotate(-24deg);
+    -o-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+}
+
+div.spread:hover div.taro22 {
+    top: 26px;
+    left: 50px;
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+
+div.spread>div.card:hover {
+    top: -60px;
+    -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.4);
+}
+
+div.disappear {
+    animation: disappear-card 2s forwards;
+}
+
+div.comeDown {
+    animation: come-down 2s forwards;
+}
+
+@keyframes start-card {
+    10% {
+        -webkit-transform: translate(0px, -20px);
+        -moz-transform: translate(0px, -20px);
+        -o-transform: translate(0px, -20px);
+        -ms-transform: translate(0px, -20px);
+        transform: translate(0px, -20px);
+    }
+
+    55% {
+        -webkit-transform: translate(0, 20px);
+        -moz-transform: translate(0, 20px);
+        -o-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        transform: translate(0, 20px);
+    }
+}
+
+@keyframes start-card-end {
+    from {
+        -webkit-transform: translate(0, 20px);
+        -moz-transform: translate(0, 20px);
+        -o-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        transform: translate(0px, 20px);
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -o-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+
+    to {
+        -webkit-transform: translate(0, -50px);
+        -moz-transform: translate(0, -50px);
+        -o-transform: translate(0, -50px);
+        -ms-transform: translate(0, -50px);
+        transform: translate(0, -50px);
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes circle-end {
+    from {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -o-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+
+    to {
+        -webkit-transform: translate(0, 20px);
+        -moz-transform: translate(0, 20px);
+        -o-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        transform: translate(0, 20px);
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes start-board {
+    from {
+        -webkit-transform: translate(0, 20px);
+        -moz-transform: translate(0, 20px);
+        -o-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translate(0, 20px);
+        -moz-transform: translate(0, 20px);
+        -o-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -o-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes selected-taro {
+    10%{
+        -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -o-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+
+    100%{
+        -webkit-transform: translate(0px, -100px);
+        -moz-transform: translate(0px, -100px);
+        -o-transform: translate(0px, -100px);
+        -ms-transform: translate(0px, -100px);
+        transform: translate(0px, -100px);
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes rise-card {
+    from {
+        -webkit-transform: translate(0px, -50px);
+        -moz-transform: translate(0px, -50px);
+        -o-transform: translate(0px, -50px);
+        -ms-transform: translate(0px, -50px);
+        transform: translate(0px, -50px);
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translate(0, 0px);
+        -moz-transform: translate(0, 0px);
+        -o-transform: translate(0, 0px);
+        -ms-transform: translate(0, 0px);
+        transform: translate(0, 0px);
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -o-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes disappear-card {
+    10%{
+        -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+    }
+
+    60%{
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -o-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+
+    100%{
+        -webkit-transform: translate(0px, 50px);
+        -moz-transform: translate(0px, 50px);
+        -o-transform: translate(0px, 50px);
+        -ms-transform: translate(0px, 50px);
+        transform: translate(0px, 50px);
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -o-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes come-down {
+    10%{
+        -webkit-transform: translate(0px, 0px);
+        -moz-transform: translate(0px, 0px);
+        -o-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+    }
+
+    100%{
+        -webkit-transform: translate(0px, 210px);
+        -moz-transform: translate(0px, 210px);
+        -o-transform: translate(0px, 210px);
+        -ms-transform: translate(0px, 210px);
+        transform: translate(0px, 210px);
+    }
+}

@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    padding: 0;
+	-ms-overflow-style: none; 
+    font-family: 'Cafe24Oneprettynight';
+}
+::-webkit-scrollbar { 
+	 display: none; 
+}
+header {
+    margin: 0 auto;
+    padding: 0px 0px 15px 0px;
+    text-align: center;
+    color: #fff;
+}
+section {
+    position: relative;
+    bottom: 150px;
+    margin: 0 auto;
+	width: 1024px;
+    height: 340px;
+}
+footer {
+    padding: 30px 0px 0px 0px;
+}
+.footer {
+    margin: 0 auto;
+	width: 100%;
+    height: 120px;
+    text-align: right;
+}
+.info {
+    position: fixed;
+    bottom: 50px;
+    left: 80px;
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/index_icon02.png');
+    background-size: 700px;
+	background-position: center;
+}
+.speak {
+    position: absolute;
+    bottom: 120px;
+    left: 120px;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    white-space: normal;
+    font-size: 24px;
+    padding: 30px;
+    border-radius: 150px 150px 150px 0px;
+    border: 4px dashed gray;
+    background-color: #fff;
+    display: none;
+}
+.info:hover .speak {
+    display: block;
+}
+.header {
+    margin: 0 auto;
+	width: 100%;
+    height: 600px;
+    background: url('../images/indexBG.png') no-repeat;
+	background-position: center;
+}
+.main {
+    margin: 0 auto;
+}
+.sec {
+    width: 25%;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: 0px 50px 0px 0px;
+    -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+}
+.sec:hover {
+    cursor: pointer;
+    transform: translateY(-100px);
+    transition: 0.3s ease-out;
+}
+.no3 {
+    float: left;
+    background-image: url('../images/index_icon02.png');
+	background-position: center;
+    background-color: rgb(255, 87, 65);
+}
+.no4 {
+    float: left;
+    background-image: url('../images/index_icon03.png');
+	background-position: center;
+    background-color: rgb(255, 193, 193);
+}
+.no5 {
+    float: left;
+    background-image: url('../images/index_icon01.png');
+	background-position: center;
+    background-color: rgb(255, 136, 136);
+}
+.no6 {
+    float: left;
+    background-image: url('../images/index_icon04.png');
+	background-position: center;
+    background-color: rgb(255, 255, 255);
+}
+h1 {
+    margin: 0;
+    padding: 120px;
+    font-size: 64px;
+    color: white;
+}
+h2 {
+    margin: 0;
+    padding: 0px 0px 0px 10px;
+    font-size: 48px;
+    color: white;
+}
