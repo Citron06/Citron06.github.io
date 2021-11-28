@@ -83,7 +83,7 @@ function NextPage() {
             setTimeout(function () {
                 header[0].style.display = "inline";
 
-                var innerC_str = '<div class="innerCircle" id="innerCircle"><a href="http://127.0.0.1:5500/KimHansung/TaroInfo.html">결과를 확인하기</a></div>';
+                var innerC_str = '<div class="innerCircle" id="innerCircle"><a href="./TaroInfo.html">결과를 확인하기</a></div>';
                 header[0].innerHTML += innerC_str;
             }, 2300);
         }, 4000);

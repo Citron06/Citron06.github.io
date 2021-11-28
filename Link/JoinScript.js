@@ -43,7 +43,7 @@ document.getElementById("welcome").onsubmit = function (e) {
                 if( inPwd(users[i].pwd, pwd, welPwd) != false) {
                     flag++;
                     alert(users[i].name + ' 님 로그인 되셨습니다.');
-                    document.getElementById("welcome").action = "http://127.0.0.1:5500/KimHansung/index.html";
+                    document.getElementById("welcome").action = "./index.html";
                 }
             }
         }
